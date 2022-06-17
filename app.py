@@ -8,7 +8,12 @@ centros_emergencia_mujer_data=[]
 
 app = FastAPI()
 
-@app.get('/comisarias')
+@app.get('/')
+async def home():
+    await getData('comisarias',comisarias_data,Comisaria)
+    return comisarias_data
+
+""" @app.get('/comisarias')
 async def mas_cercano_comisaria(lat:float,log:float):
     if (comisarias_data==[]):
         await getData('comisarias',comisarias_data,Comisaria)
@@ -20,4 +25,4 @@ async def mas_cercano_centros_emergencia_mujer(lat:float,log:float):
     if (centros_emergencia_mujer_data==[]):
         await getData('centros_emergencia_mujer',centros_emergencia_mujer_data,CentroEmergenciaMujer)
     calculo_de_distancias(log,lat,centros_emergencia_mujer_data)
-    return centros_emergencia_mujer_data[0]
+    return centros_emergencia_mujer_data[0] """
