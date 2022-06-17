@@ -1,7 +1,7 @@
 from firebase import db
 
 async def getData(collection,arr,obj):
-    docs = db.collection(collection).stream()
+    docs = db.collection(collection).order_by("departamento").stream()
     for doc in docs:
         aux=obj.from_dict(doc.id,doc.to_dict())
         arr.append(aux)
