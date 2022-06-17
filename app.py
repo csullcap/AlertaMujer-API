@@ -11,7 +11,7 @@ app = FastAPI()
 @app.get('/')
 async def home():
     await getData('comisarias',comisarias_data,Comisaria)
-    return comisarias_data
+    return {"data":comisarias_data}
 
 """ @app.get('/comisarias')
 async def mas_cercano_comisaria(lat:float,log:float):
