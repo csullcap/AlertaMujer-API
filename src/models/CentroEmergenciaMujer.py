@@ -1,5 +1,7 @@
+from src.metodos import selectRandomImage
+
 class CentroEmergenciaMujer (object):
-    def __init__(self, id, nombre, departamento, provincia, distrito, direccion,coordinador, telefono, latitud, longitud,  tipo, distancia):
+    def __init__(self, id, nombre, departamento, provincia, distrito, direccion,coordinador, telefono, latitud, longitud,  tipo, distancia,image):
         self.id = id
         self.nombre = nombre
         self.departamento = departamento
@@ -12,10 +14,11 @@ class CentroEmergenciaMujer (object):
         self.longitud = longitud
         self.tipo = tipo
         self.distancia = distancia
+        self.image=image
 
     def setDistancia(self,distancia):
         self.distancia=distancia
-    
+
     @staticmethod
     def from_dict(id,source):
         return CentroEmergenciaMujer(
@@ -30,5 +33,6 @@ class CentroEmergenciaMujer (object):
             source['latitud'], 
             source['longitud'],   
             source['tipo'], 
-            0)
+            0,
+            selectRandomImage())
 
