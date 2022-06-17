@@ -11,7 +11,7 @@ app = FastAPI()
 @app.get('/')
 async def home():
     await getData('centros_emergencia_mujer',centros_emergencia_mujer_data,CentroEmergenciaMujer)
-    return {"data":centros_emergencia_mujer_data, "nro_registros":len(centros_emergencia_mujer_data)}
+    return {"data":centros_emergencia_mujer_data, "nro_registros":180}
 
 """ @app.get('/comisarias')
 async def mas_cercano_comisaria(lat:float,log:float):
