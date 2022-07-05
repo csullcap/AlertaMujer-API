@@ -1,4 +1,4 @@
-from src.metodos import selectRandomImage
+from src.metodos import selectRandomImageCEM
 
 class CentroEmergenciaMujer (object):
     def __init__(self, id, nombre, departamento, provincia, distrito, direccion,coordinador, telefono, latitud, longitud,  tipo, distancia,image):
@@ -34,5 +34,5 @@ class CentroEmergenciaMujer (object):
             source['longitud'],   
             source['tipo'], 
             0,
-            selectRandomImage())
+            selectRandomImageCEM())
 

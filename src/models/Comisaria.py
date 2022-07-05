@@ -1,5 +1,7 @@
+from src.metodos import selectRandomImageCOMISARIAS
+
 class Comisaria (object):
-    def __init__( self, id, codigo, departamento, distrito, divpol_divopus, latitud, longitud, macroregion, nombre, provincia, regionpolicial, rural, sectorial, tipo, tipocomisaria, zonal, distancia):
+    def __init__( self, id, codigo, departamento, distrito, divpol_divopus, latitud, longitud, macroregion, nombre, provincia, regionpolicial, rural, sectorial, tipo, tipocomisaria, zonal, distancia, image):
         self.id=id
         self.codigo = codigo 
         self.nombre = nombre
@@ -17,6 +19,7 @@ class Comisaria (object):
         self.longitud = longitud
         self.tipo = tipo
         self.distancia=distancia
+        self.image=image
 
     def setDistancia(self,distancia):
         self.distancia=distancia
@@ -40,6 +43,7 @@ class Comisaria (object):
             source['tipo'], 
             source['tipocomisaria'], 
             source['zonal'],
-            0)
+            0,
+            selectRandomImageCOMISARIAS())
 
 
