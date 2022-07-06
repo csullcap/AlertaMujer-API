@@ -11,7 +11,7 @@ app = FastAPI()
 @app.get('/')
 async def home():
     await getData('comisarias',comisarias_data,Comisaria)
-    return {"nro_registros":len(comisarias_data),"data":comisarias_data}
+    return {"nro_registros":len(comisarias_data),"data":comisarias_data[:400]}
 
 """ 
 
